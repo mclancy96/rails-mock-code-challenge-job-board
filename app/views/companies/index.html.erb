@@ -1,0 +1,8 @@
+<h1>Companies</h1>
+<ol>
+  <% @companies.each do |company| %>
+    <li>
+      <%= company.name %> (Industry: <%= company.industry %>)
+    </li>
+  <% end %>
+</ol>

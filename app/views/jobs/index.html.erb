@@ -1,0 +1,8 @@
+<h1>Jobs</h1>
+<ol>
+  <% @jobs.each do |job| %>
+    <li>
+      <strong><%= job.title %></strong> (Salary: $<%= job.salary %>)
+    </li>
+  <% end %>
+</ol>
