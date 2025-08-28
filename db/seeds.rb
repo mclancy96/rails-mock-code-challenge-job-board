@@ -1,29 +1,29 @@
-HousePlant.destroy_all
-Room.destroy_all
+Job.destroy_all
+Company.destroy_all
 
-rooms = [
-  { name: "Power Code Academy Classroom", occupancy: 7 },
-  { name: "Atlanta", occupancy: 12 },
-  { name: "Cincinnati", occupancy: 9 },
-  { name: "Reading", occupancy: 11 },
-  { name: "Executive Boardroom", occupancy: 22 }
+companies = [
+  { name: "Power Code Academy", industry: "Education" },
+  { name: "Atlanta Tech", industry: "Technology" },
+  { name: "Cincinnati Solutions", industry: "Consulting" },
+  { name: "Reading Group", industry: "Publishing" },
+  { name: "Executive Boardroom Inc.", industry: "Management" }
 ]
 
-rooms.each { |room_attributes| Room.create(room_attributes) }
+companies.each { |company_attributes| Company.create(company_attributes) }
 
-house_plants = [
-  { plant_type: "Spider plant", height: 12 },
-  { plant_type: "Devil's ivy", height: 18 },
-  { plant_type: "Jade plant", height: 5 },
-  { plant_type: "Sword fern", height: 8 },
-  { plant_type: "Rubber fig", height: 21 },
-  { plant_type: "Fiddle-leaf fig", height: 17 }
+jobs = [
+  { title: "Software Engineer", salary: 80000 },
+  { title: "Marketing Specialist", salary: 60000 },
+  { title: "Data Analyst", salary: 70000 },
+  { title: "Project Manager", salary: 90000 },
+  { title: "UX Designer", salary: 75000 },
+  { title: "Account Executive", salary: 65000 }
 ]
 
-house_plants = house_plants.map do |plant_attributes|
-  plant_attributes.merge(room_id: Room.all.sample.id)
+jobs = jobs.map do |job_attributes|
+  job_attributes.merge(company_id: Company.all.sample.id)
 end
 
-house_plants.each do |plant_attributes|
-  HousePlant.create(plant_attributes)
+jobs.each do |job_attributes|
+  Job.create(job_attributes)
 end
