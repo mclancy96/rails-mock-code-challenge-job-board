@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :rooms, only: [:index]
-  resources :house_plants, only: [:index]
+  resources :companies, only: [:index]
+  resources :jobs, only: [:index]
 end
